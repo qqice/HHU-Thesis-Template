@@ -1,5 +1,5 @@
 [package]
-name = "hhu-thesis-template"
+name = "shane-hhu-thesis"
 version = "0.1.0"
 entrypoint = "hhu-thesis/template.typ"
 authors = ["shane"]

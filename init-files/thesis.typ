@@ -1,4 +1,7 @@
-#import "@preview/hhu-thesis-template:0.1.0": degree-conf, thanks, appendix
+#import "@preview/shane-hhu-thesis:0.1.0": degree-conf, thanks, appendix
+
+
+// 使用前请先安装https://github.com/shaneworld/Dots/tree/master/fonts中的全部字体
 
 #show: doc => bachelor-conf(
   author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
