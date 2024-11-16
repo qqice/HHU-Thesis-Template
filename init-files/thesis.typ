@@ -1,7 +1,6 @@
-#import "@preview/shane-hhu-thesis:0.1.0": bachelor-conf, thanks, appendix, code
+#import "@preview/shane-hhu-thesis:0.2.0": bachelor-conf, thanks, appendix, code
 
-
-// 使用前请先安装https://github.com/shaneworld/Dots/tree/master/fonts中的全部字体
+// 使用前请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体
 
 #show: doc => bachelor-conf(
   author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
@@ -18,15 +17,19 @@
     heading: "河海大学本科毕业论文"
   ),
   title: (
-    CN: "植物对泥沙沉降规律的影响研究",
-    EN: "Study on the influence of plants on sediment deposition",
+    CN: [植物对泥沙沉降规律的影响研究],
+    EN: [
+      Study on the influence of plants on \
+      sediment deposition
+    ],
   ),
   school: (
     CN: "河海大学",
     EN: "Hohai University",
   ),
+  form: "thesis", // 毕业论文："thesis"，毕业设计："design"
   major: "自动化",
-  subject: "Here is the subject",
+  subject: "subject",
   reader: "李四 副教授",
   date: "二〇二四年五月",
   cn-abstract: [
@@ -50,6 +53,14 @@
 === 问题提出
 
 近年来，随着环境的日益恶化，人们对生态日益重视，含有植物的水流问题也已经成为河流动力学研究中的热点之一。直观的了解，河渠水流中的植物不仅减少了过水面积，加大了河渠地面的粗糙程度，降低了河渠的行洪能力，加大了两岸的洪灾威胁。
+
++ 问题一
+
++ 问题二
+
+- hello
+
+- hello2
 
 #align(center)[......]
 
@@ -111,7 +122,7 @@ $ alpha + beta = gamma $ <eqexample​>
 // 上面这处代码请不要直接复制
 // 因为为了规避渲染报错，加了一个零宽度空格
 
-#h(2em)Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显示为 $I=V / R$，有时需要使用转义方式输入斜杠，如 ```typ $I=V \/ R$```。
+Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显示为 $I=V / R$，有时需要使用转义方式输入斜杠，如 ```typ $I=V \/ R$```。
 
 
 == 表示例
@@ -191,8 +202,6 @@ $ alpha + beta = gamma $ <eqexample​>
   caption: [每小时降水量24小时均值分布图]
 )
 
-*#h(2em) 通常情况下，插入图、表等组件后，后续的首个段落会丢失首行缩进，需要使用 `#h(2em)` 手动补充缩进。*
-
 如一个插图由两个及以上的分图组成，分图用(a)、(b)、(c)等标出，并标出分图名。目前，本模板尚未实现分图的字母自动编号。如需要分图，建议使用 `#grid` 来构建。例如：
 
 #code(
@@ -219,7 +228,7 @@ $ alpha + beta = gamma $ <eqexample​>
   caption: "速度障碍法速度选择"
 )
 
-#h(2em) ```typ columns``` 中间的参数为两图片的间距，实际使用中，网格划分、网格大小调整需要自行操作。
+```typ columns``` 中间的参数为两图片的间距，实际使用中，网格划分、网格大小调整需要自行操作。
 
 #align(center)[......]
 
@@ -253,7 +262,7 @@ $ alpha + beta = gamma $ <eqexample​>
 ```
 ) 
 
-#h(2em)这里有一段话 @kopka2004guide，引用多个会自动合并 @kopka2004guide @wang2010guide 。
+里有一段话 @kopka2004guide，引用多个会自动合并 @kopka2004guide @wang2010guide 。
 
 
 完成上述操作后，*在致谢章节之后！致谢章节之后！致谢章节之后！*，添加
@@ -267,7 +276,7 @@ $ alpha + beta = gamma $ <eqexample​>
   ```
 ) 
 
-#h(2em)就会自动生成参考文献表。模板使用的 `ref.bib` 来自 https://github.com/lucifer1004/pkuthss-typst 。
+就会自动生成参考文献表。模板使用的 `ref.bib` 来自 https://github.com/lucifer1004/pkuthss-typst 。
 
 河海大学本科毕业论文要求参考文献部分采用 `GB7714-2005`，此处的相关细节后续会完善。
 
