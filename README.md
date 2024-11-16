@@ -12,7 +12,7 @@
 
 <div style="display:flex; flex-direction:column; gap: 20px;">
   <div style="display:flex; gap: 20px;">
-    <img src="./demo_images/title-zh.png" width="400"/>
+    <img src="./demo_images/title-cn.png" width="400"/>
     <img src="./demo_images/title-en.png" width="400"/>
   </div>
   <div style="display:flex; gap: 20px;">
@@ -23,21 +23,23 @@
 
 ## 使用方法
 
-模板正在上传 Typst Universe ，收录成功后可以使用 `typst init` 功能初始化，也可以使用 Web App 编辑。Typst Universe 上的模板可能不是最新版本。如果需要使用最新版本的模板，从本 repo 中获取。
+模板已上传 Typst Universe ，可以使用 `typst init` 功能初始化，也可以使用 Web APP 编辑。**Typst Universe 上的模板可能不是最新版本。如果需要使用最新版本的模板，从本 repo 中获取。**
 
 #### 本地使用（推荐）
 
-使用前，请先安装 `fonts` 目录内的全部字体。
+使用前，请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体。
 
-- 克隆或下载本 repo 的全部文件，编辑 `init-files` 目录内的示例文件。
+- 克隆本 repo 到本地，编辑 `init-files` 目录内的文件。
 
-- 使用 `typst init` 本地初始化模板：**TODO**
+- 使用 `typst init @preview/shane-hhu-thesis:0.1.0` 本地初始化模板。
 
-#### Web App 内使用
+#### Web APP 内使用
 
-由于字体原因，不建议使用此方法。
+由于 Typst Web APP 在每次打开页面的时候都会从服务器中下载字体，速度较慢，体验较差，因此不建议使用此方法。
 
-**TODO**
+在 [Typst Universe](https://typst.app/universe/package/shane-hhu-thesis) 中点击 `Create project in app` 按钮进入 Web APP 内。
+
+然后，请将 `https://github.com/shaneworld/Dots/tree/master/fonts` 内的所有字体上传到 Web APP 内该项目的根目录后按照提示使用。
 
 ## 模板内容
 
@@ -46,6 +48,7 @@
 目前包含以下页面：
 
 - [x] 中英文封面
+- [x] 郑重声明
 - [x] 中英文摘要
 - [x] 目录
 - [x] 正文
@@ -53,16 +56,15 @@
 - [x] 参考文献
 - [x] 附录
 
-模板目前仍然存在一些细节问题，后续会陆续更新解决。
+此论文模板不仅适用于本科生毕业论文/设计，同样适用于平时的课程报告等规范内容。可以通过自定义 `form` 字段更改论文种类，有以下3种格式可供选择：
 
-- [ ] 图标后的段落需要使用 `#h(2em)` 手动缩进两个字符。
-- [ ] 参考文献格式不完全符合学校要求的国家标准（GB7714-2005）要求。
-- [ ] 行距、边距等有待继续调整，尤其是图标的上下行距。
-- [ ] 存在多个重复的下划线显示方式，需要合并。
-- [ ] 表头单独加粗英文字体。
-- [ ] 调整下划线和下划线之前的文字底部对齐。
-- [ ] 调整有序列表序号的位置，使其与文字对齐。
-- [ ] 其他代码精简与优化。
+- `thesis`：毕业论文
+- `design`：毕业设计
+- `report`：课程报告
+
+可以通过修改 `heading` 字段修改页眉内容，修改 `thesis-name` 下的 `CN` 字段修改封面页面展示的标题。
+
+如果发现模板的问题，欢迎提交 issue。
 
 ## 致谢
 

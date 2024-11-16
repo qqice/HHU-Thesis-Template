@@ -1,10 +1,15 @@
-#import "../utils/utils.typ": ziti, zihao, chinese-numbering, show-cn-fakebold, i-figured, show-math-equation
+#import "../utils/utils.typ": ziti, zihao, chinese-numbering, show-cn-fakebold, i-figured, show-math-equation, show-figure
 #import "../parts/heading-conf.typ": heading-conf
 
 #let set-bachelor(always-new-page: true, doc) = {
   set page(paper: "a4", margin: (top: 2.7cm, bottom: 3cm, left: 3.2cm, right: 3.2cm))
   set text(font: ziti.宋体, size: zihao.小四, weight: "regular", lang: "zh")
   set par(first-line-indent: 2em, leading: 1.2em, justify: true)
+
+  set enum(numbering: it  => {
+    v(0.125em)
+    numbering("1.", it)
+  })
 
   show: show-cn-fakebold
 
@@ -27,7 +32,6 @@
     #text(font: ziti.黑体, size: zihao.五号, it)
   ]
   // 表格内容字体
-  // TODO: 只加粗caption的英文
   show figure: set text(size: zihao.五号, font: ziti.宋体, weight: "regular")
   // 图表caption数字展示方式
   show figure: i-figured.show-figure.with(numbering: "1-1")
@@ -36,8 +40,11 @@
   set math.equation(number-align: bottom)
   // 公式算作单独段落
   show math.equation.where(block: true): show-math-equation
+  show figure: show-figure
+  // show enum.number: show-enum-num
 
   set heading(numbering: chinese-numbering)
+  set bibliography(style: "gb-7714-2005-numeric")
 
   doc
 }

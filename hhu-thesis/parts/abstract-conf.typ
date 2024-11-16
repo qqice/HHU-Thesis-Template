@@ -66,11 +66,3 @@
     }
   }
 }
-
-// TODO: 合并默认配置
-#abstract-conf(
-  cn-abstract: [摘要],
-  cn-keywords: ("关键词1", "关键词2"),
-  en-abstract: [ABSTRACT],
-  en-keywords: ("Keywords1", "Keywords2"),
-)

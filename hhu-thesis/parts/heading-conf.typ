@@ -1,4 +1,4 @@
-#import "../utils/utils.typ": ziti, zihao, to-string, fake-par, show-cn-fakebold, i-figured
+#import "../utils/utils.typ": ziti, zihao, to-string, show-cn-fakebold, i-figured
 
 #let heading-conf(
   // 下方以数组形式给出的参数，代表 level 1, level 2, ... 标题分别使用的参数。
@@ -22,7 +22,7 @@
   // 每次一级标题都切换到新的页面，取值为 auto bool 或 function ，如果 function 则会以 function 作为分页时执行的操作
   always-new-page: false, 
   // 为 true 时，二字标题会变为 A #h(2em) B
-  auto-h-spacing: true, 
+  auto-h-spacing: false, 
   it
 ) = {
   set par(first-line-indent: 0em)
@@ -98,6 +98,4 @@
   )
 
   i-figured.reset-counters((level: it.level), return-orig-heading: false)
-
-  fake-par
 }

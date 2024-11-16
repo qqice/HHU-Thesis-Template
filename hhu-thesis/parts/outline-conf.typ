@@ -6,15 +6,7 @@
     number-align: center,
     margin: (top: 3.5cm, bottom: 3.2cm, left: 3.2cm, right: 3.2cm),
   )
-  set par(first-line-indent: 0pt, leading: 10pt)
-
-  show heading.where(
-    level: 1
-  ): it => {
-    set align(center)
-    set text(font: ziti.黑体, size: zihao.小二, weight: "bold")
-    it.body
-  }
+  set par(first-line-indent: 0pt, leading: 1.2em)
 
   heading(
     numbering: none,

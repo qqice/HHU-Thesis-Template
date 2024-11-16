@@ -1,6 +1,5 @@
 #import "@preview/a2c-nums:0.0.1": int-to-cn-num
 #import "@preview/cuti:0.2.1": show-cn-fakebold, fakebold
-#import "@preview/sourcerer:0.2.1": code
 #import "@preview/i-figured:0.2.4"
 
 #let zihao = (
@@ -50,10 +49,6 @@
   }
 }
 
-// fake-par
-#let empty-par = par[#box()]
-#let fake-par = context empty-par + v(-measure(empty-par + empty-par).height)
-
 // part-state
 #let part-state = state("part")
 
@@ -66,22 +61,6 @@
     name
   }
 }
-
-// TODO: 合并以下两种下划线方式
-// 下划线值
-#let fieldvalue(style : ziti.宋体, size : zihao.三号, value) = [
-  #set align(center + horizon)
-  #set text(font: style, size:size)
-  #grid(
-     rows: (auto, auto),
-     row-gutter: 0.3em,
-     [#value],
-     line(length: 100%)
-  )
-]
-
-// 下划线
-#let term = fieldvalue.with(style : ziti.宋体, size : zihao.四号) 
 
 // 下划线
 #let chineseunderline(s, width: 300pt, bold: false) = {
@@ -124,14 +103,14 @@
         ret.push(now)
       }
       ret.push(v(-0.9em))
-      ret.push(line(length: 100%, stroke: (thickness: 0.7pt)))
+      ret.push(line(length: 100%, stroke: (thickness: 0.5pt)))
     }
 
     ret.join()
   }
 }
 
-// TODO: 优化justify-words
+
 #let justify-words(s, width: none) = {
   assert(type(s) == str and s.clusters().len() >= 2)
   context {
@@ -205,6 +184,13 @@
   par()[#text(size:0em)[#h(0em)]]
 }
 
+// 图表后段落自动首行缩进
+#let show-figure(fig) = {
+  par()[#text(size:0em)[#h(0em)]]
+  fig
+  par()[#text(size:0em)[#h(0em)]]
+}
+
 // TODO: 只加粗caption的英文
 #let show-table(caption) = {
   // 将文本转换为字符串
@@ -217,8 +203,6 @@
     }
   }
 }
-
-// TODO: 设置下划线和之前的文字底部平齐
 
 // TODO: 调整有序列表序号的位置，使其与文字平齐
 

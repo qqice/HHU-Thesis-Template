@@ -24,14 +24,15 @@
     heading: "河海大学本科毕业论文"
   ),
   title: (
-    CN: "植物对泥沙沉降规律的影响研究",
-    EN: "Study on the influence of plants on sediment deposition",
+    CN: [植物对泥沙沉降规律的影响研究],
+    EN: [Study on the influence of plants on sediment deposition],
   ),
   school: (
     CN: "河海大学",
     EN: "Hohai University",
   ),
-  subject: "Here is the subject",
+  subject: "subject",
+  form: "thesis",
   major: "自动化",
   reader: "李四 副教授",
   date: "二〇二四年五月",
@@ -51,18 +52,22 @@
     school: school,
     major: major,
     date: date,
+    reader: reader,
   )
 
-  title-en-conf(
-    author: author,
-    thesis-name: thesis-name,
-    title: title,
-    advisors: advisors,
-    school: school,
-    date: date,
-  )
+  if form != "report" {
+    title-en-conf(
+      author: author,
+      thesis-name: thesis-name,
+      subject: subject,
+      title: title,
+      advisors: advisors,
+      school: school,
+      date: date,
+    )
 
-  statement-page-conf()
+    statement-page-conf(form: form)
+  }
 
   abstract-conf(
     cn-abstract: cn-abstract,
@@ -95,8 +100,8 @@
     heading: "河海大学本科毕业论文"
   ),
   title: (
-    CN: "植物对泥沙沉降规律的影响研究",
-    EN: "Study on the influence of plants on sediment deposition",
+    CN: [植物对泥沙沉降规律的影响研究],
+    EN: [Study on the influence of plants on sediment deposition],
   ),
   school: (
     CN: "河海大学",
