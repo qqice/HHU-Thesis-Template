@@ -1,4 +1,4 @@
-#import "@preview/shane-hhu-thesis:0.2.0": bachelor-conf, thanks, appendix, code
+#import "@preview/shane-hhu-thesis:0.3.0": bachelor-conf, thanks, appendix, code
 
 // #import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
 
