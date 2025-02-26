@@ -16,8 +16,8 @@
   v(1cm)
   show outline.entry.where(level: 1): it => {
     v(1.2em, weak: true)
-    set text(font: ziti.宋体, size: zihao.四号, weight: "bold")
+    set text(font: ziti.宋体, size: zihao.小四, weight: "bold")
     strong(it)
   }
-  outline(title: none, depth: outline-depth, indent: 0em)
+  outline(title: none, depth: outline-depth, indent: 2em)
 }

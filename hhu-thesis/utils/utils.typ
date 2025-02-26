@@ -187,11 +187,13 @@
 // 图表后段落自动首行缩进
 #let show-figure(fig) = {
   par()[#text(size:0em)[#h(0em)]]
+  v(-1em)
   fig
   par()[#text(size:0em)[#h(0em)]]
+  v(-1em)
 }
 
-// TODO: 只加粗caption的英文
+
 #let show-table(caption) = {
   // 将文本转换为字符串
   let text = to-string(caption)
@@ -203,8 +205,6 @@
     }
   }
 }
-
-// TODO: 调整有序列表序号的位置，使其与文字平齐
 
 // code display
 #let code(
@@ -340,4 +340,6 @@
   }
 
   raw(block: true, lang: source.lang, unlabelled-source)
+  par()[#text(size:0em)[#h(0em)]]
+  v(-1.2em)
 }

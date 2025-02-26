@@ -1,5 +1,7 @@
 #import "@preview/shane-hhu-thesis:0.2.0": bachelor-conf, thanks, appendix, code
 
+// #import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
+
 // 使用前请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体
 
 #show: doc => bachelor-conf(
@@ -27,7 +29,7 @@
     CN: "河海大学",
     EN: "Hohai University",
   ),
-  form: "thesis", // 毕业论文："thesis"，毕业设计："design"
+  form: "thesis", // 毕业论文："thesis"，毕业设计："design", 课程报告："report"
   major: "自动化",
   subject: "subject",
   reader: "李四 副教授",
