@@ -4,7 +4,7 @@
 #let set-bachelor(always-new-page: true, doc) = {
   set page(paper: "a4", margin: (top: 2.7cm, bottom: 3cm, left: 3.2cm, right: 3.2cm))
   set text(font: ziti.宋体, size: zihao.小四, weight: "regular", lang: "zh")
-  set par(first-line-indent: 2em, leading: 1.2em, justify: true)
+  set par(first-line-indent: (amount: 2em, all: true), leading: 1.2em, justify: true)
 
   set enum(numbering: it  => {
     v(0.125em)
