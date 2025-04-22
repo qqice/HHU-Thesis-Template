@@ -1,4 +1,4 @@
-#import "../utils/utils.typ": fakebold, ziti, zihao, chineseunderline, fieldname
+#import "../utils/utils.typ": fakebold, ziti, zihao, chineseunderline, fieldname, fit-in,  label-content-grid
 
 // 中文封面配置
 #let title-cn-conf(
@@ -51,21 +51,21 @@
         dy: 2cm,
         dx: -2cm,
         {
-          set text(
-            font: ziti.黑体,
-            size: zihao.五号,
-            weight: "regular",
-            lang: "zh",
-            region: "cn",
-          )
-          set align(center)
-          grid(
-            columns: (2em, 8em),
-            row-gutter: 1.2em,
-            "学号",
-            chineseunderline(author.ID),
-            "年级",
-            chineseunderline(author.YEAR),
+          label-content-grid(
+            (
+              ("学号", author.ID),
+              ("年级", author.YEAR),
+            ),
+            align: center,
+            row-gutter: 15pt,
+            spliter-width: 3pt,
+            min-content-width: 80pt,
+            label-style: (content) => {
+              text(font: ziti.黑体, size: zihao.五号, weight: "regular")[#fit-in(content)]
+            },
+            content-style: (content) => {
+              text(font: ziti.黑体, size: zihao.五号, weight: "regular")[#chineseunderline(content)]
+            },
           )
         },
       )
@@ -100,18 +100,30 @@
           set text(font: ziti.宋体, size: zihao.小三, weight: "regular")
           set underline(offset: 5pt)
           set place(dy: -0.2em, center)
-          grid(
-            columns: (5em, 0.2em, 10em),
+          label-content-grid(
+            (
+              ("专业", major),
+              ("姓名", author.CN),
+              ("指导教师", advisors.CN),
+              ("评阅人", reader),
+            ),
+            align: center,
             row-gutter: 1.5em,
-            fieldname([专#h(2em)业], bold: true), "", place(chineseunderline(major)),
-            fieldname([姓#h(2em)名], bold: true), "", place(chineseunderline(author.CN)),
-            fieldname([指导教师], bold: true), "", place(chineseunderline(advisors.CN)),
-            fieldname([评#h(0.5em)阅#h(0.5em)人], bold: true), "", place(chineseunderline(reader)),
+            spliter-width: 0.2em,
+            min-label_width: 4em,
+            min-content-width: 10em,
+            label-style: (content) => {
+              text(font: ziti.黑体, size: zihao.小三, weight: "bold")[#fit-in(content)]
+            },
+            content-style: (content) => {
+              [#chineseunderline(content)]
+            },
           )
         },
         // 空间
         [],
         // 日期和地点
+        
         grid(
           rows: 2,
           gutter: 16pt,  // 可以调整行间距
@@ -182,17 +194,22 @@
 
     v(3cm)
 
-    set text(font: ziti.宋体, size: zihao.小三, weight: "regular")
+    set text(font: ziti.宋体, size: zihao.四号, weight: "regular")
     set align(center)
-    grid(
-      columns: (10em, 1em, 10em),
-      row-gutter: 1.5em,
-      fieldname([College]), ":", align(left, school.EN),
-      fieldname([Subject]), ":", align(left, subject),
-      fieldname([Name]), ":", align(left, author.EN),
-      fieldname([Directed by]), ":", align(left, advisors.EN),
-    )
-
+    label-content-grid(
+      (
+        ("College", school.EN),
+        ("Subject", subject),
+        ("Name", author.EN),
+        ("Directed by", advisors.EN),
+      ),
+        align: (right, center, left),
+        row-gutter: 1.5em,
+        spliter: ":",
+        spliter-width: 1em,
+        min-label_width: 0em,
+        min-content-width: 8em,
+      )
     v(1cm)
 
     block(text(font: "Times New Roman", size: zihao.小二, weight: "regular", "NANJING CHINA"))

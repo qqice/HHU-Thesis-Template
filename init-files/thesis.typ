@@ -1,4 +1,4 @@
-#import "@preview/shane-hhu-thesis:0.3.0": bachelor-conf, thanks, appendix, code
+#import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
 
 // #import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
 
@@ -27,12 +27,12 @@
   ),
   school: (
     CN: "河海大学",
-    EN: "Hohai University",
+    EN: "College of Hydrology and Water Resources,Hohai University",
   ),
   form: "thesis", // 毕业论文："thesis"，毕业设计："design", 课程报告："report"
   major: "自动化",
   subject: "subject",
-  reader: "李四 副教授",
+  reader: "李四 副教授\n李五 教授",
   date: "二〇二四年五月",
   cn-abstract: [
     由于泥沙与水流的相互作用，使得河流发生演变，因此泥沙特性与水流特性均是河流动力学的重要研究课题。当水流中含有植物时，水流的紊动特性会发生明显的改变，从而引起泥沙的一些特性如沉速发生改变。本文以实验为基础，结合理论分析，研究了在静水条件下刚性植物对泥沙沉速的影响，同时在水槽中通过改变流量来研究在恒定均匀流条件下非淹没植物对泥沙沉降轨迹的影响，得到如下主要结论：

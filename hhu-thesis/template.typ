@@ -105,7 +105,7 @@
   ),
   school: (
     CN: "河海大学",
-    EN: "Hohai University",
+    EN: "College of Hydrology and Water Resources, Hohai University",
   ),
   major: "自动化",
   reader: "李四 副教授",

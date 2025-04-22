@@ -343,3 +343,117 @@
   par()[#text(size:0em)[#h(0em)]]
   v(-1.2em)
 }
+
+// fit-in: Spreads out characters of a text string with flexible spacing to fit a container.
+// Parameters:
+// - text: The input text to spread out (string).
+// Returns: A Typst content block with characters separated by flexible horizontal spacing (1fr),
+// or an empty string if the input is empty.
+#let fit-in(content) = {
+  let chars = content.clusters()
+  if chars.len() == 0 {
+    return ""
+  }
+  let content = h(0pt)
+  for i in range(chars.len()) {
+    content += chars.at(i)
+    if i < chars.len() - 1 {
+      content += h(1fr)
+    }
+  }
+  content += h(0pt)
+  content
+}
+
+// split-and-pair-lines: Processes an array of (label, content) tuples, splitting multi-line labels and contents
+// and pairing them line-by-line, padding with empty strings if uneven.
+// Parameters:
+// - pairs: An array of (label, content) tuples, e.g., (("ID", "123\n456"), ("Name", "John")).
+// Returns: A flat array of (label, content) tuples, where each tuple represents a matched line.
+// Example: (("major", "Computer Science \n and Technology")) becomes (("major", "Computer Science"), ("", "and Technology")).
+#let split-and-pair-lines(pairs) = {
+  let result = ()
+  for pair in pairs {
+    let labels = pair.at(0).split("\n")
+    let contents = pair.at(1).split("\n")
+    let max_lines = calc.max(labels.len(), contents.len())
+    
+    for i in range(max_lines) {
+      result.push((
+        labels.at(i, default: ""),
+        contents.at(i, default: "")
+      ))
+    }
+  }
+  result
+}
+
+// create_label_content_grid: Creates a grid layout for label-content pairs, handling multi-line labels and contents.
+// Each pair is split into lines and matched, with columns dynamically sized to fit the widest content.
+// Parameters:
+// - pairs: An array of (label, content) tuples, e.g., (("ID", "114514"), ("Grade", "2023")).
+// - spacer_width: Width of the spacer column between label and content (default: 0.1em).
+// - row_gutter: Vertical spacing between rows (default: 1em).
+// - min_label_width: Minimum width for the label column (default: 2em).
+// - min_content_width: Minimum width for the content column (default: 8em).
+// - label_style: Function to style the label text (default: fit_in).
+// - content_style: Function to style the content text (default: fill_in_blank).
+// Returns: A grid with three columns (label, spacer, content), where column widths are dynamically adjusted.
+// Panics if pairs is not an array or if any pair is not a valid (label, content) tuple.
+#let label-content-grid(
+  pairs,
+  align: auto,
+  spliter: "",
+  spliter-width: 0.1em,
+  row-gutter: 1em,
+  min-label_width: 2em,
+  min-content-width: 8em,
+  label-style: (content) => [#content],
+  content-style: (content) => [#content]
+) = {
+  // Ensure pairs is an array
+  assert(type(pairs) == array, message: "pairs must be an array of (label, content) tuples")
+
+  context {
+    // Process pairs to handle multi-line labels and contents
+    let processed_pairs = split-and-pair-lines(pairs)
+
+    // Measure the width of each label and content
+    let label_widths = processed_pairs.map(pair => {
+      assert(type(pair) == array and pair.len() == 2, message: "Each pair must be a tuple of (label, content)")
+      measure(label-style(pair.at(0))).width
+    })
+    let content_widths = processed_pairs.map(pair => {
+      // Measure content with wrap disabled to get its full single-line width
+      measure(content-style(pair.at(1))).width
+    })
+    
+    // Convert min_label_width and min_content_width to pt
+    let min_label_width_pt = measure(box(width: min-label_width)).width
+    let min_content_width_pt = measure(box(width: min-content-width)).width
+    let min_spliter_width_pt = measure(box(spliter)).width
+    
+    // Calculate maximum widths, respecting minimum defaults
+    let max_label_width = calc.max(label_widths.fold(0pt, (a, b) => calc.max(a, b)), min_label_width_pt)
+    let max_content_width = calc.max(content_widths.fold(0pt, (a, b) => calc.max(a, b)), min_content_width_pt)
+    let max_spliter_width = calc.max(measure(box(spliter)).width, min_spliter_width_pt)
+    
+    // Create the grid with dynamic column widths
+    grid(
+      align: align,
+      columns: (max_label_width, spliter-width, max_content_width),
+      row-gutter: row-gutter,
+      ..processed_pairs.map(pair => (
+        label-style(pair.at(0)), 
+
+        // Only the first line of labels should be followed by a spliter
+        if pair.at(0) != "" {
+          box(spliter)
+        } else {
+          box(width: 0em) // Empty box for empty labels
+        },
+        content-style(pair.at(1))
+      )).flatten()
+    )
+  }
+}
