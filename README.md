@@ -20,7 +20,7 @@
 
 2. 安装 Typst
 
-    - **Archlinux**
+    **Archlinux**
 
     ```shell
     sudo pacman -S typst
