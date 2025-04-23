@@ -7,8 +7,6 @@
 > 此模板非官方模板，可能仍存在一些问题，后续会不断更新完善。
 >
 > 此模板仅适用于工科专业本科毕业论文（设计），后续可能会更新文科模板。
->
-> 本模板使用 Typst 0.12.x 编译，Typst 更新频率较高，可能出现版本更新后无法编译成功的情况。
 
 ![demo](./demo_images/title.png)
 
@@ -18,11 +16,21 @@
 
 #### 本地使用（推荐）
 
-使用前，请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体。
+1. 使用前，请先安装 [fonts](https://github.com/shaneworld/Dots/tree/master/fonts) 中的全部字体。
 
-- 克隆本 repo 到本地，编辑 `init-files` 目录内的文件。
+2. 安装 Typst
 
-- 使用 `typst init @preview/shane-hhu-thesis:0.1.0` 本地初始化模板。
+    - **Archlinux**
+
+    ```shell
+    sudo pacman -S typst
+    ```
+
+    **Windows**
+
+    前往 [Release](https://github.com/typst/typst/releases/) 下载最新版并将其添加到系统环境变量。
+
+3. 终端执行 `typst init @preview/shane-hhu-thesis:0.3.0` 本地初始化模板。
 
 #### Web APP 内使用
 
@@ -30,7 +38,7 @@
 
 在 [Typst Universe](https://typst.app/universe/package/shane-hhu-thesis) 中点击 `Create project in app` 按钮进入 Web APP 内。
 
-然后，请将 `https://github.com/shaneworld/Dots/tree/master/fonts` 内的所有字体上传到 Web APP 内该项目的根目录后按照提示使用。
+然后，请将 [fonts](https://github.com/shaneworld/Dots/tree/master/fonts) 内的所有字体上传到 Web APP 内该项目的根目录后按照提示使用。
 
 ## 模板内容
 
