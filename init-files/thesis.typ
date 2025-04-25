@@ -1,8 +1,15 @@
-#import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
-
 // #import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
 
+#import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
+
 // 使用前请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体
+
+// 修复有序列表序标和文字不对齐的问题
+#show list.item: it => context [
+  #let marker = list.marker.at(0)
+  #let height = measure[#it.body].height
+  #box(height: height)[#marker #it.body] \
+]
 
 #show: doc => bachelor-conf(
   author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
@@ -27,12 +34,12 @@
   ),
   school: (
     CN: "河海大学",
-    EN: "College of Hydrology and Water Resources,Hohai University",
+    EN: "Hohai University",
   ),
   form: "thesis", // 毕业论文："thesis"，毕业设计："design", 课程报告："report"
   major: "自动化",
   subject: "subject",
-  reader: "李四 副教授\n李五 教授",
+  reader: "李四 副教授",
   date: "二〇二四年五月",
   cn-abstract: [
     由于泥沙与水流的相互作用，使得河流发生演变，因此泥沙特性与水流特性均是河流动力学的重要研究课题。当水流中含有植物时，水流的紊动特性会发生明显的改变，从而引起泥沙的一些特性如沉速发生改变。本文以实验为基础，结合理论分析，研究了在静水条件下刚性植物对泥沙沉速的影响，同时在水槽中通过改变流量来研究在恒定均匀流条件下非淹没植物对泥沙沉降轨迹的影响，得到如下主要结论：
@@ -44,7 +51,6 @@
   en-keywords: ("Keywords1", "Keywords2"),
   doc,
 )
-
 
 = 绪论
 
@@ -60,9 +66,9 @@
 
 + 问题二
 
-- hello
+- point1
 
-- hello2
+- point2
 
 #align(center)[......]
 
@@ -280,7 +286,7 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 
 就会自动生成参考文献表。模板使用的 `ref.bib` 来自 https://github.com/lucifer1004/pkuthss-typst 。
 
-河海大学本科毕业论文要求参考文献部分采用 `GB7714-2005`，此处的相关细节后续会完善。
+根据要求，河海大学本科毕业论文要求参考文献部分采用 `GB7714-2005`。
 
 #thanks[
 
@@ -304,10 +310,10 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 
 #bibliography(
   "ref.bib", // 替换为自己的bib路径
+  style: "chinese-gb7714-2005-numeric.csl" // 参考文献格式
 )
 
 #show: appendix // 进入附录部分
-
 
 = 附录说明 <appendix-1>
 

@@ -4,7 +4,7 @@
 
 > [!IMPORTANT]
 >
-> 此模板非官方模板，可能仍存在一些问题，后续会不断更新完善。
+> 此模板非官方模板，可能仍存在一些问题。
 >
 > 此模板仅适用于工科专业本科毕业论文（设计），后续可能会更新文科模板。
 
@@ -30,7 +30,7 @@
 
     前往 [Release](https://github.com/typst/typst/releases/) 下载最新版并将其添加到系统环境变量。
 
-3. 终端执行 `typst init @preview/shane-hhu-thesis:0.3.0` 本地初始化模板。
+3. 终端执行 `typst init @preview/shane-hhu-thesis:LATEST_VERSION` 本地初始化模板，其中 LATEST_VERSION 为 [Typst Universe](https://typst.app/universe/package/shane-hhu-thesis) 中已发布的最新版本，如 0.4.0。
 
 #### Web APP 内使用
 
