@@ -205,7 +205,7 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 
 
 #figure(
-  image("./assets/24h_rain.png", width: 8.36cm),
+  image("./assets/24h_rain.png", width: 9cm),
   caption: [每小时降水量24小时均值分布图]
 )
 

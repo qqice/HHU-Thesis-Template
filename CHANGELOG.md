@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.4.0 - 2025-04-25
+
+### Fixed
+
+- 中文字体下有序列表序标与文字不对齐问题
+- 编号后不换行问题 ([#2](https://github.com/shaneworld/HHU-Thesis-Template/pull/2))
+
+### Changed
+
+更新 README 中的过时内容，完善本地部署步骤
+
+### Added
+
+- 添加参考文献格式（GB7714-2005）
+- 提供了更加灵活的 label-content 框，支持自适应长度和手动换行。([#3](https://github.com/shaneworld/HHU-Thesis-Template/pull/3))
+
+### Contributors
+
+- [@Met4physics](https://github.com/Met4physics)
+- [@X1ngChui](https://github.com/X1ngChui)
+
 ## 0.3.0 - 2025-02-26
 
 ### Fixed

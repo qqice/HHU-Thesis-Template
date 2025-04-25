@@ -1,14 +1,17 @@
 # 河海大学本科毕业论文（设计）模板（工科）
 
-使用 Typst 制作的河海大学「本科毕业设计（论文）报告」模板（工科）。官方模板参考[河海大学本科毕业设计（论文）规范格式参考](https://bylw.hhu.edu.cn/UpLoadFile/83cd5f1169974a0db06d865c7ee11af4.pdf)
+使用 Typst 制作的河海大学「本科毕业设计（论文）报告」模板（工科）。参考[河海大学本科毕业设计（论文）规范格式参考](https://bylw.hhu.edu.cn/UpLoadFile/83cd5f1169974a0db06d865c7ee11af4.pdf) 制作，但并非官方模板，可能存在细节问题。
 
-> [!IMPORTANT]
->
-> 此模板非官方模板，可能仍存在一些问题。
->
-> 此模板仅适用于工科专业本科毕业论文（设计），后续可能会更新文科模板。
-
-![demo](./demo_images/title.png)
+<p align="center">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <!-- 第一行 -->
+    <img src="./demo_images/title.png" style="width: 45%;" />
+    <img src="./demo_images/outline.png" style="width: 45%;" />
+    <!-- 第二行 -->
+    <img src="./demo_images/math.png" style="width: 45%;" />
+    <img src="./demo_images/fig_table.png" style="width: 45%;" />
+  </div>
+</p>
 
 ## 使用方法
 
@@ -20,7 +23,7 @@
 
 2. 安装 Typst
 
-    **Archlinux**
+    **Arch Linux**
 
     ```shell
     sudo pacman -S typst
@@ -28,7 +31,7 @@
 
     **Windows**
 
-    前往 [Release](https://github.com/typst/typst/releases/) 下载最新版并将其添加到系统环境变量。
+    前往 [Release](https://github.com/typst/typst/releases/) 下载最新版并添加到环境变量。
 
 3. 终端执行 `typst init @preview/shane-hhu-thesis:LATEST_VERSION` 本地初始化模板，其中 LATEST_VERSION 为 [Typst Universe](https://typst.app/universe/package/shane-hhu-thesis) 中已发布的最新版本，如 0.4.0。
 
@@ -43,17 +46,6 @@
 ## 模板内容
 
 此 Typst 模板按照[《河海大学本科毕业设计（论文）基本规范(修订)》](https://bylw.hhu.edu.cn/UpLoadFile/83cd5f1169974a0db06d865c7ee11af4.pdf)制作，制作时参考了[东南大学制作的 Typst 模板](https://github.com/csimide/SEU-Typst-Template)。
-
-目前包含以下页面：
-
-- [x] 中英文封面
-- [x] 郑重声明
-- [x] 中英文摘要
-- [x] 目录
-- [x] 正文
-- [x] 致谢
-- [x] 参考文献
-- [x] 附录
 
 此论文模板不仅适用于本科生毕业论文/设计，同样适用于平时的课程报告等规范内容。可以通过自定义 `form` 字段更改论文种类，有以下3种格式可供选择：
 
