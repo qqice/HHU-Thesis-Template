@@ -5,10 +5,10 @@
 <p align="center">
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
     <!-- 每行两个图片，宽度计算为 (50% - 间隙补偿) -->
-    <img src="./demo_images/title.jpg" style="width: calc(50% - 5px);" />
-    <img src="./demo_images/outline.jpg" style="width: calc(50% - 5px);" />
-    <img src="./demo_images/math.jpg" style="width: calc(50% - 5px);" />
-    <img src="./demo_images/pic.jpg" style="width: calc(50% - 5px);" />
+    <img src="./demo_images/title.jpg" style="width: 49%;" />
+    <img src="./demo_images/outline.jpg" style="width: 49%;" />
+    <img src="./demo_images/math.jpg" style="width: 49%;" />
+    <img src="./demo_images/pic.jpg" style="width: 49%;" />
   </div>
 </p>
 
