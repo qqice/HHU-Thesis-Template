@@ -3,13 +3,12 @@
 使用 Typst 制作的河海大学「本科毕业设计（论文）报告」模板（工科）。参考[河海大学本科毕业设计（论文）规范格式参考](https://bylw.hhu.edu.cn/UpLoadFile/83cd5f1169974a0db06d865c7ee11af4.pdf) 制作，但并非官方模板，可能存在细节问题。
 
 <p align="center">
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-    <!-- 第一行 -->
-    <img src="./demo_images/title.png" style="width: 45%;" />
-    <img src="./demo_images/outline.png" style="width: 45%;" />
-    <!-- 第二行 -->
-    <img src="./demo_images/math.png" style="width: 45%;" />
-    <img src="./demo_images/fig_table.png" style="width: 45%;" />
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; width: 100%;">
+    <!-- 每行两个图片，宽度计算为 (50% - 间隙补偿) -->
+    <img src="./demo_images/title.jpg" style="width: calc(50% - 5px);" />
+    <img src="./demo_images/outline.jpg" style="width: calc(50% - 5px);" />
+    <img src="./demo_images/math.jpg" style="width: calc(50% - 5px);" />
+    <img src="./demo_images/pic.jpg" style="width: calc(50% - 5px);" />
   </div>
 </p>
 
