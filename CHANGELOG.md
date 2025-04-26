@@ -4,8 +4,7 @@
 
 ### Fixed
 
-- 中文字体下有序列表序标与文字不对齐问题
-- 编号后不换行问题 ([#2](https://github.com/shaneworld/HHU-Thesis-Template/pull/2))
+编号后不换行问题 ([#2](https://github.com/shaneworld/HHU-Thesis-Template/pull/2))
 
 ### Changed
 
