@@ -3,13 +3,6 @@
 #import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
 // 使用前请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体
 
-// 修复有序列表序标和文字不对齐的问题
-#show list.item: it => context [
-  #let marker = list.marker.at(0)
-  #let height = measure[#it.body].height
-  #box(height: height)[#marker #it.body] \
-]
-
 #show: doc => bachelor-conf(
   author: (CN: "李华", EN: "Li Hua", ID: "2162510220", YEAR: "2021级"),
   advisors: (
