@@ -40,7 +40,7 @@
 
 在 [Typst Universe](https://typst.app/universe/package/shane-hhu-thesis) 中点击 `Create project in app` 按钮进入 Web APP 内。
 
-然后，请将 [fonts](https://github.com/shaneworld/Dots/tree/master/fonts) 内的所有字体上传到 Web APP 内该项目的根目录后按照提示使用。
+然后，请将 [fonts](https://github.com/shaneworld/Dots/tree/master/fonts) 内的所有字体上传到 Web APP 内该项目的根目录任意位置后按照提示使用。
 
 ## 模板内容
 
@@ -54,6 +54,20 @@
 
 可以通过修改 `heading` 字段修改页眉内容，修改 `thesis-name` 下的 `CN` 字段修改封面页面展示的标题。
 
+### 参考文献格式
+
+本模板按照学校要求采用 GB7714-2005 格式对参考文献进行排版，并针对测试中遇到的格式问题进行适当的修改加工。
+
+由于项目使用 BibTex 方式自动导入参考文献，因此需要确保 BibTex 信息准确全面，可能需要手动检查并完善。导入的 BibTex 参考文献必须包含以下信息（示例）：
+
+![bibtex](./demo_images/bibtex.png)
+
+渲染后的结果如下：
+
+![result](./demo_images/guide.png)
+
+具体设置参见 [hhu-bibliography](https://github.com/shaneworld/HHU-Thesis-Template/blob/master/hhu-thesis/parts/hhu-bibliography.typ) 文件。
+
 如果发现模板的问题，欢迎提交 issue。
 
 ## 致谢
@@ -61,3 +75,5 @@
 - 东南大学论文模板：[csimide/SEU-Typst-Template](https://github.com/csimide/SEU-Typst-Template)
 
 - 北京大学本科生毕业论文模板：[sigongzi/pkuthss-typst-undergraduate](https://github.com/sigongzi/pkuthss-typst-undergraduate)
+
+- 南京大学学位论文 Typst 模板：[nju-lug/modern-nju-thesis](https://github.com/nju-lug/modern-nju-thesis)

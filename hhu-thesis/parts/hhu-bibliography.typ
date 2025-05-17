@@ -1,3 +1,6 @@
+// Authors: csimide, OrangeX4
+// 基于 https://github.com/nju-lug/modern-nju-thesis/blob/main/utils/bilingual-bibliography.typ 修改
+
 #import "../utils/utils.typ": to-string
 
 #let hhu-bibliography(
@@ -129,6 +132,7 @@
   }
 
   set text(lang: "zh")
+
   bibliography(
     title: title,
     full: full,

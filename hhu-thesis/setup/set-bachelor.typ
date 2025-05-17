@@ -44,7 +44,6 @@
   show math.frac: math.display
   
   show figure: show-figure
-  // show enum.number: show-enum-num
 
   set heading(numbering: chinese-numbering)
 
