@@ -1,6 +1,6 @@
 // #import "@preview/shane-hhu-thesis:0.4.0": bachelor-conf, thanks, appendix, code
 
-#import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code
+#import "../hhu-thesis/template.typ": bachelor-conf, thanks, appendix, code, hhu-bibliography
 // 使用前请先安装 `https://github.com/shaneworld/Dots/tree/master/fonts` 中的全部字体
 
 #show: doc => bachelor-conf(
@@ -269,9 +269,9 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 
 #code(
   ```typst
-  #bibliography(
-    "ref.bib", // 替换为自己的bib路径
-    style: "chinese-gb7714-2005-numeric.csl"
+  #hhu-bibliography(
+    bibliography: bibliography.with("ref.bib"),
+    full: true
   )
   ```
 ) 
@@ -300,9 +300,9 @@ Typst 默认尝试使用数学方式表现，例如 ```typ $I=V / R$``` 会显�
 
 ]
 
-#bibliography(
-  "ref.bib", // 替换为自己的bib路径
-  style: "chinese-gb7714-2005-numeric.csl" // 参考文献格式
+#hhu-bibliography(
+  bibliography: bibliography.with("ref.bib"),
+  full: true
 )
 
 #show: appendix // 进入附录部分

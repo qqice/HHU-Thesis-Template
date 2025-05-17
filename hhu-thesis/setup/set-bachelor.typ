@@ -40,11 +40,13 @@
   set math.equation(number-align: bottom)
   // 公式算作单独段落
   show math.equation.where(block: true): show-math-equation
+  set math.cases(gap: 1em)
+  show math.frac: math.display
+  
   show figure: show-figure
   // show enum.number: show-enum-num
 
   set heading(numbering: chinese-numbering)
-  set bibliography(style: "gb-7714-2005-numeric")
 
   doc
 }

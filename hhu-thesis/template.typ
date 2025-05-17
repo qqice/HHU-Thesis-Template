@@ -6,6 +6,7 @@
 #import "parts/appendix-conf.typ": appendix
 #import "parts/thanks-conf.typ": thanks
 #import "parts/code-conf.typ": code
+#import "parts/hhu-bibliography.typ": hhu-bibliography
 
 #import "setup/set-bachelor.typ": set-bachelor
 
